@@ -38,15 +38,15 @@ if __name__ == '__main__':
 
     print("DATASET LOADED!\n")
 
-    # # Size == 0.5
-    # stock_prices_reduced = STOCK_PRICES.sample(frac=0.5, random_state=24)
-    # stock_prices_reduced.to_csv(CWD + f"/datasets/historical_stock_prices_post_processed_0.5.csv", header=True, index=False)
-    # print("Dataset Replica with Size 0.5 generated!\n")
+    # Size == 0.5
+    stock_prices_reduced = STOCK_PRICES.sample(frac=0.5, random_state=24)
+    stock_prices_reduced.to_csv(CWD + f"/datasets/historical_stock_prices_post_processed_0.5.csv", header=True, index=False)
+    print("Dataset Replica with Size 0.5 generated!\n")
 
-    # # Size == 0.75
-    # stock_prices_reduced = STOCK_PRICES.sample(frac=0.75, random_state=24)
-    # stock_prices_reduced.to_csv(CWD + f"/datasets/historical_stock_prices_post_processed_0.75.csv", header=True, index=False)
-    # print("Dataset Replica with Size 0.75 generated!\n")
+    # Size == 0.75
+    stock_prices_reduced = STOCK_PRICES.sample(frac=0.75, random_state=24)
+    stock_prices_reduced.to_csv(CWD + f"/datasets/historical_stock_prices_post_processed_0.75.csv", header=True, index=False)
+    print("Dataset Replica with Size 0.75 generated!\n")
 
     # Size == 1.25
     stock_prices_to_enhance = STOCK_PRICES.copy()
