@@ -6,6 +6,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 CWD = os.getcwd()
 STOCK_PRICES = pd.read_csv(CWD + "/datasets/historical_stock_prices.csv", header=0)
+STOCK_INFOS = pd.read_csv(CWD + "/datasets/historical_stocks.csv", header=0)
 
 ### #### ###
 ### MAIN ###
@@ -23,4 +24,5 @@ if __name__ == '__main__':
     print("Column 'year' inserted!\n")
     
     print("Saving Post-Processed Data")
-    STOCK_PRICES.to_csv(CWD + "/datasets/historical_stock_prices_post_processed.csv", header=True, index=False)
+    STOCK_PRICES.to_csv(CWD + "/datasets/historical_stock_prices.csv", sep=';', header=True, index=False)
+    STOCK_INFOS.to_csv(CWD + "/datasets/historical_stocks.csv", sep=';', header=True, index=False)

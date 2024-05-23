@@ -40,12 +40,12 @@ if __name__ == '__main__':
 
     # Size == 0.5
     stock_prices_reduced = STOCK_PRICES.sample(frac=0.5, random_state=24)
-    stock_prices_reduced.to_csv(CWD + f"/datasets/historical_stock_prices_post_processed_0.5.csv", header=True, index=False)
+    stock_prices_reduced.to_csv(CWD + f"/datasets/historical_stock_prices_0.5.csv", header=True, index=False)
     print("Dataset Replica with Size 0.5 generated!\n")
 
     # Size == 0.75
     stock_prices_reduced = STOCK_PRICES.sample(frac=0.75, random_state=24)
-    stock_prices_reduced.to_csv(CWD + f"/datasets/historical_stock_prices_post_processed_0.75.csv", header=True, index=False)
+    stock_prices_reduced.to_csv(CWD + f"/datasets/historical_stock_prices_0.75.csv", header=True, index=False)
     print("Dataset Replica with Size 0.75 generated!\n")
 
     # Size == 1.25
@@ -70,7 +70,7 @@ if __name__ == '__main__':
         row = result_queue.get()
         stock_prices_enhanced = pd.concat([stock_prices_to_enhance, pd.DataFrame([row])], axis=0)
 
-    stock_prices_enhanced.to_csv(CWD + f"/datasets/historical_stock_prices_post_processed_1.25.csv", header=True, index=False)
+    stock_prices_enhanced.to_csv(CWD + f"/datasets/historical_stock_prices_1.25.csv", header=True, index=False)
     print("Dataset Replica with Size 1.25 generated!\n")
 
     # Size == 1.33
@@ -95,7 +95,7 @@ if __name__ == '__main__':
         row = result_queue.get()
         stock_prices_enhanced = pd.concat([stock_prices_to_enhance, pd.DataFrame([row])], axis=0)
 
-    stock_prices_enhanced.to_csv(CWD + f"/datasets/historical_stock_prices_post_processed_1.33.csv", header=True, index=False)
+    stock_prices_enhanced.to_csv(CWD + f"/datasets/historical_stock_prices_1.33.csv", header=True, index=False)
     print("Dataset Replica with Size 1.33 generated!\n")
 
     # Size == 1.5
@@ -120,5 +120,5 @@ if __name__ == '__main__':
         row = result_queue.get()
         stock_prices_enhanced = pd.concat([stock_prices_to_enhance, pd.DataFrame([row])], axis=0)
 
-    stock_prices_enhanced.to_csv(CWD + f"/datasets/historical_stock_prices_post_processed_1.5.csv", header=True, index=False)
+    stock_prices_enhanced.to_csv(CWD + f"/datasets/historical_stock_prices_1.5.csv", header=True, index=False)
     print("Dataset Replica with Size 1.5 generated!\n")
