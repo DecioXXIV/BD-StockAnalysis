@@ -16,8 +16,8 @@ stock_prices = args.stock_prices
 spark = SparkSession.builder.config("spark.driver.host", "localhost").getOrCreate()
 
 # Input CSV Datasets
-stockinfo_DF = spark.read.csv(stock_infos, header=True).cache()         # Schema -> ticker, exchange, name, sector, industry
-stockprices_DF = spark.read.csv(stock_prices, header=True).cache()      # Schema -> ticker, open, close, adj_close, low, high, volume, date, year
+stockinfo_DF = spark.read.options(delimiter=';', header=True).csv(stock_infos).cache()         # Schema -> ticker, exchange, name, sector, industry
+stockprices_DF = spark.read.options(delimiter=';', header=True).csv(stock_prices).cache()      # Schema -> ticker, open, close, adj_close, low, high, volume, date, year
 
 print("INIZIO DELL'ELABORAZIONE...")
 start = datetime.now()
