@@ -8,7 +8,7 @@ CREATE TABLE stock_infos (
     `industry` STRING
 )
 ROW FORMAT DELIMITED
-FIELDS TERMINATED BY ','
+FIELDS TERMINATED BY ';'
 STORED AS TEXTFILE
 tblproperties ("skip.header.line.count"="1");
 
@@ -27,7 +27,7 @@ CREATE TABLE stock_prices (
     `year` INT
 )
 ROW FORMAT DELIMITED
-FIELDS TERMINATED BY ','
+FIELDS TERMINATED BY ';'
 STORED AS TEXTFILE
 tblproperties ("skip.header.line.count"="1");
 
