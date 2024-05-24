@@ -22,6 +22,13 @@ if __name__ == '__main__':
     print("STEP 2 - Inserting the Column 'year'...")
     STOCK_PRICES['year'] = STOCK_PRICES['date'].apply(lambda x: x[0:4])     # Date = yyyy-mm-dd
     print("Column 'year' inserted!\n")
+
+    print("STEP 3 - Correcting the Column 'name' in STOCK_INFOS...")
+    for row in range(0, len(STOCK_INFOS)):
+        name = STOCK_INFOS.at[row, 'name']
+        if "&#39;" in name:
+            name = name.replace("&#39;", "'")
+            STOCK_INFOS.at[row, 'name'] = name
     
     print("Saving Post-Processed Data")
     STOCK_PRICES.to_csv(CWD + "/datasets/historical_stock_prices.csv", sep=';', header=True, index=False)
